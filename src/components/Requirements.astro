@@ -1,0 +1,184 @@
+---
+// Requirements component
+---
+
+<section class="section__container project__container" id="requisitos">
+  <div class="project__header">
+    <h2 class="section__header">Requisitos</h2>
+  </div>
+  <div class="project__grid">
+    <div class="project__card pensionado">
+      <h2>Pensionado</h2>
+      <h4>Edad</h4>
+      <p>Hasta 84 años</p>
+      <h4>Plazo</h4>
+      <p>Hasta 180 meses</p>
+      <h4>Monto</h4>
+      <p>Desde $1 millón y hasta 140 Millones</p>
+      <h4>Condiciones</h4>
+      <p><i class="ri-verified-badge-fill"></i> Ser pensionado de alguna de las entidades con las que tenemos convenio.</p>
+      <p class="pr"><i class="ri-arrow-right-fill"></i> Fotocopia de la cédula</p>
+      <p><i class="ri-arrow-right-fill"></i> 2 últimos desprendibles de pago</p>
+    </div>
+    <div class="project__card policía">
+      <h2>Policía</h2>
+      <h4>Plazo</h4>
+      <p>Hasta 96 meses</p>
+      <h4>Monto</h4>
+      <p>Desde $1 millón y hasta 140 Millones</p>
+      <h4>Condiciones</h4>
+      <p><i class="ri-verified-badge-fill"></i> Ser miembro activo de la Policía Nacional. El personal administrativo no es elegible para créditos.</p>
+      <p class="pr"><i class="ri-arrow-right-fill"></i> Fotocopia de la cédula</p>
+      <p><i class="ri-arrow-right-fill"></i> 2 últimos desprendibles de pago</p>
+    </div>
+    <div class="project__card maestro">
+      <h2>Maestro</h2>
+      <h4>Rango de Edad</h4>
+      <p>Hasta 57 años para mujeres y hasta 62 años para hombres</p>
+      <h4>Plazo</h4>
+      <p>Hasta 120 meses</p>
+      <h4>Monto</h4>
+      <p>Desde $1 millón y hasta 140 Millones</p>
+      <h4>Condiciones</h4>
+      <p><i class="ri-verified-badge-fill"></i> Tener tipo de contrato "en propiedad."</p>
+      <p class="pr"><i class="ri-verified-badge-fill"></i> Pertenecer a una secretaría de educación con la cual exista convenio</p>
+      <p class="pr"><i class="ri-verified-badge-fill"></i> Aplica para personal administrativo con contrato en propiedad que trabaje en las secretarias de educación.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Requirements section styles */
+  .project__container {
+    padding: 3rem 1rem;
+  }
+
+  .project__header {
+    margin-bottom: 3rem;
+  }
+
+  .project__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .project__card {
+    padding: 2.5rem 2rem;
+    background-image: var(--gradient-2);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #00aa44;
+  }
+
+  .project__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .project__card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #00aa44;
+    text-align: center;
+  }
+
+  .project__card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .project__card p {
+    color: var(--extra-light);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+  }
+
+  .project__card p i {
+    margin-right: 0.5rem;
+    color: #00aa44;
+  }
+
+  .project__card .pr {
+    padding-left: 1rem;
+  }
+
+  /* Specific card styling */
+  .pensionado {
+    border-left-color: #4CAF50;
+  }
+
+  .pensionado h2 {
+    color: #4CAF50;
+  }
+
+  .policía {
+    border-left-color: #2196F3;
+  }
+
+  .policía h2 {
+    color: #2196F3;
+  }
+
+  .maestro {
+    border-left-color: #FF9800;
+  }
+
+  .maestro h2 {
+    color: #FF9800;
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    .project__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    .project__card {
+      padding: 3rem 2.5rem;
+    }
+
+    .project__card h2 {
+      font-size: 2rem;
+    }
+
+    .project__card h4 {
+      font-size: 1.2rem;
+    }
+
+    .project__card p {
+      font-size: 17px;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .project__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project__card {
+      padding: 3.5rem 2.5rem;
+    }
+
+    .project__card h2 {
+      font-size: 2.2rem;
+    }
+
+    .project__card h4 {
+      font-size: 1.3rem;
+    }
+
+    .project__card p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+  }
+</style>

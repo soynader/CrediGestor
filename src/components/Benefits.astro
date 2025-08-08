@@ -1,0 +1,139 @@
+---
+// Benefits component
+---
+
+<section class="section__container service__container" id="beneficios">
+  <h2 class="section__header">Tus beneficios exclusivos</h2>
+  <div class="service__grid">
+    <div class="service__card">
+      <span><i class="ri-money-dollar-circle-line"></i></span>
+      <h4>Crédito de libre inversión</h4>
+      <p>
+        Destina tu dinero como quieras: paga tus deudas, invierte o úsalo en lo que más te importe.
+      </p>
+    </div>
+    <div class="service__card">
+      <span><i class="ri-smartphone-line"></i></span>
+      <h4>Tramite 100% Digital</h4>
+      <p>
+        Realiza todo el proceso de tu préstamo desde cualquier computadora o dispositivo móvil, sin necesidad de desplazarte.
+      </p>
+    </div>
+    <div class="service__card">
+      <span><i class="ri-fire-line"></i></span>
+      <h4>Aunque tengas reportes en centrales de riesgo</h4>
+      <p>
+        ¿Estás reportado o no tienes historial crediticio? No importa. Creemos en segundas oportunidades y te ofrecemos préstamos sin necesidad de codeudores.
+      </p>
+    </div>
+    <div class="service__card">
+      <span><i class="ri-currency-fill"></i></span>
+      <h4>Compra de cartera con tasa de interes preferencial</h4>
+      <p>
+        La solución a tus deudas comienza aquí. Reorganiza tus finanzas con la mejor tasa del mercado.
+      </p>
+    </div>
+    <div class="service__card">
+      <span><i class="ri-p2p-fill"></i></span>
+      <h4>Sin importar tu edad</h4>
+      <p>
+        Te apoyamos en cada etapa de tu vida. Accede a un préstamo, incluso hasta los 84 años, y sigue alcanzando tus metas.
+      </p>
+    </div>
+    <div class="service__card">
+      <span><i class="ri-timer-flash-line"></i></span>
+      <h4>Recibe tu aprobación el mismo día</h4>
+      <p>
+        Con nuestro proceso ágil y sencillo, recibirás tu aprobación el mismo día, No esperes más para dar el primer paso hacia tu crédito.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Service section styles */
+  .service__grid {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .service__card {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background-image: var(--gradient-2);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .service__card span {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #00aa44;
+  }
+
+  .service__card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .service__card p {
+    color: var(--extra-light);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    .service__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .service__card {
+      padding: 2.5rem 2rem;
+    }
+
+    .service__card h4 {
+      font-size: 1.3rem;
+    }
+
+    .service__card p {
+      font-size: 17px;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .service__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service__card {
+      padding: 3rem 2rem;
+    }
+
+    .service__card span {
+      font-size: 3rem;
+    }
+
+    .service__card h4 {
+      font-size: 1.4rem;
+    }
+
+    .service__card p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+  }
+</style>

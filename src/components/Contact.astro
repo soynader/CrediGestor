@@ -1,0 +1,84 @@
+---
+// Contact component
+---
+
+<section class="section__container contact__container" id="contact">
+  <div class="header__btn">
+    <a href="https://wa.me/573046480657" target="_blank" rel="noopener noreferrer" class="btn">
+      ¡Habla Conmigo! <span><i class="ri-whatsapp-line"></i></span>
+    </a>
+  </div>
+  
+  <p class="section__description">
+    Conéctate ahora y obtén toda la información que necesitas para solicitar tu crédito de forma rápida y sin complicaciones.
+  </p>
+</section>
+
+<style>
+  /* Contact section styles */
+  .contact__container {
+    text-align: center !important;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, rgba(11, 23, 40, 0.7), rgba(22, 45, 80, 0.6));
+    border-radius: 1.5rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+    margin: 2rem auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 1000px !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header__btn {
+    margin-bottom: 2rem;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .contact__container * {
+    text-align: center !important;
+  }
+
+  .section__description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--extra-light);
+    max-width: 600px;
+    margin: 0 auto !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    .contact__container {
+      padding: 4rem 2rem;
+    }
+
+    .section__description {
+      font-size: 20px;
+      max-width: 700px;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .contact__container {
+      padding: 5rem 3rem;
+    }
+
+    .section__description {
+      font-size: 22px;
+      max-width: 800px;
+      line-height: 1.8;
+    }
+  }
+</style>

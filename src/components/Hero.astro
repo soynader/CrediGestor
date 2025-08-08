@@ -1,0 +1,129 @@
+---
+// Hero component
+---
+
+<header class="section__container header__container" id="inicio">
+  <div class="video-container">
+    <link rel="preconnect" href="https://fast.wistia.com">
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/50onh39pm2.js" async type="module"></script>
+    <style>
+      wistia-player[media-id='50onh39pm2']:not(:defined) { 
+        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/50onh39pm2/swatch'); 
+        display: block; 
+        filter: blur(5px); 
+        padding-top:56.25%; 
+      }
+    </style> 
+    <wistia-player media-id="50onh39pm2" aria-label="Video explicativo sobre crédito de libranza para pensionados"></wistia-player>
+  </div>
+
+  <div class="header__content">
+    <div>
+      <h1>Rápido, sencillo y confiable: Crédito de libranza diseñado para pensionados, maestros y policías.</h1>
+    </div>
+    <p class="horas">
+      Aprobación en 4 horas
+    </p>
+    <div class="header__btn">
+      <a href="https://wa.me/573046480657" target="_blank" rel="noopener noreferrer" class="btn">
+        <span><i class="ri-whatsapp-line"></i></span> Asesoría Gratis
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Header styles */
+  .header__container {
+    padding-top: 5rem;
+    display: grid;
+    gap: 2rem;
+    isolation: isolate;
+  }
+
+  .header__content {
+    text-align: center;
+  }
+
+  .header__content h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .horas {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00aa44;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .header__btn {
+    margin-top: 2rem;
+  }
+
+  /* Video container styles */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    isolation: isolate;
+    z-index: -1;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .video-container wistia-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+
+  /* Desktop styles */
+  @media (min-width: 768px) {
+    .header__container {
+      padding-top: 5rem;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .video-container {
+      grid-area: 1/3/2/5;
+      max-width: none;
+      margin: 0;
+    }
+
+    .header__content {
+      grid-area: 1/1/2/3;
+      text-align: left;
+    }
+
+    .header__content h1 {
+      font-size: 3rem;
+      line-height: 3rem;
+      text-align: left;
+    }
+
+    .horas {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .header__content h1 {
+      font-size: 3rem;
+    }
+
+    .horas {
+      font-size: 1.4rem;
+    }
+  }
+</style>

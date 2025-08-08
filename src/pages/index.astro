@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Benefits from '../components/Benefits.astro';
+import Requirements from '../components/Requirements.astro';
+import Questions from '../components/Questions.astro';
+import LogosGrid from '../components/LogosGrid.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Crédito de Libranza para Pensionados, Maestros y Policías | CrediGestor">
+  <Header />
+  <Hero />
+  <About />
+  <Benefits />
+  <Requirements />
+  <Questions />
+  <LogosGrid />
+  <Contact />
+  <Footer />
+</Layout>
+
+<script>
+  // Disable right-click context menu
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+    alert("El clic derecho está deshabilitado.");
+  });
+</script>

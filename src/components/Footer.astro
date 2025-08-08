@@ -1,0 +1,185 @@
+---
+// Footer component
+---
+
+<footer class="footer">
+  <div class="footer__content">
+    <p class="footer__mission">
+      Mi misión es ofrecerte un asesoramiento personalizado ágil y eficiente. Te garantizo un servicio de alta calidad, sin costos por el proceso ni el trámite.
+    </p>
+    
+    <p class="footer__description">
+      Soy Nader Montenegro, Asesor de Crédito de la financiera líder en soluciones especialmente diseñadas para pensionados y empleados del estado, incluyendo maestros y miembros de las fuerzas militares. Me respaldo en mi sitio web Credigestor.com, donde ofrezco información y apoyo para ayudarte a acceder a estas opciones de crédito de manera rápida y confiable.
+    </p>
+    
+    <p class="footer__phone">
+      <a href="tel:3046480657" class="call-link">
+        Llámame al <i class="ri-phone-line"></i> 3046480657
+      </a>
+    </p>
+    
+    <a href="https://wa.me/573046480657" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+      <i class="ri-whatsapp-line"></i>
+    </a>
+    
+    <p class="footer__copyright">
+      Copyright © 2024 Web Design NaMo. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+  /* Footer styles */
+  .footer {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 0.9rem;
+    color: var(--extra-light);
+    text-align: center;
+    position: relative;
+  }
+
+  .footer__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .footer__mission {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--extra-light);
+    font-weight: 500;
+  }
+
+  .footer__description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--extra-light);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer__phone {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #00aa44;
+    margin-bottom: 1rem;
+  }
+
+  .call-link {
+    color: #00aa44;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .call-link:hover {
+    color: #008833;
+  }
+
+  .call-link i {
+    margin: 0 0.5rem;
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #20b954;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  }
+
+  .footer__copyright {
+    font-size: 0.9rem;
+    color: var(--extra-light);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    .footer {
+      padding: 3rem 2rem 1rem;
+    }
+
+    .footer__mission {
+      font-size: 0.9rem;
+    }
+
+    .footer__description {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .call-link {
+      font-size: 0.9rem;
+    }
+
+    .whatsapp-float {
+      width: 70px;
+      height: 70px;
+      font-size: 2.2rem;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .footer {
+      padding: 4rem 3rem 1rem;
+    }
+
+    .footer__mission {
+      font-size: 0.9rem;
+    }
+
+    .footer__description {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .call-link {
+      font-size: 0.9rem;
+    }
+
+    .footer__copyright {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Animation for WhatsApp float button */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+
+  .whatsapp-float {
+    animation: pulse 2s infinite;
+  }
+</style>

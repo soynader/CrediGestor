@@ -1,0 +1,232 @@
+---
+// LogosGrid component for convenios
+---
+
+<section class="section__container portfolio__container" id="convenios">
+  <h2 class="section__img">Nuestros convenios</h2>
+  <div class="portfolio__grid">
+    <div class="convenio__card">
+      <img src="/casur.jpg" alt="CASUR - Caja de Sueldos de Retiro de la Policía Nacional" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/cremil.jpg" alt="CREMIL - Caja de Retiro de las Fuerzas Militares" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/colpensiones.jpg" alt="Colpensiones - Administradora Colombiana de Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/fopep.jpg" alt="FOPEP - Fondo de Prestaciones Económicas Cesantías y Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/fomag.jpg" alt="FOMAG - Fondo Nacional del Magisterio" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/armenia.jpg" alt="Gobernación de Armenia - Convenio Crédito de Libranza" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/tolima.jpg" alt="Gobernación del Tolima - Convenio Crédito de Libranza" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/proteccion.jpg" alt="Protección - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/colfondos.jpg" alt="Colfondos - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/positiva.jpg" alt="Positiva Compañía de Seguros - ARL" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/porvenir.jpg" alt="Porvenir - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/mafre.jpg" alt="MAPFRE - Compañía de Seguros" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/sura.jpg" alt="SURA - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/alfa.jpg" alt="Old Mutual - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/skandia.jpg" alt="Skandia - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/asulado.jpg" alt="ASULADO - Asociación de Usuarios de la Defensoría del Pueblo" loading="lazy" width="200" height="120">
+    </div>
+    <div class="convenio__card">
+      <img src="/antioquia.jpg" alt="antioquia" loading="lazy">
+    </div>
+    <div class="convenio__card">
+      <img src="/medellin.jpg" alt="medellin" loading="lazy">
+    </div>
+    <div class="convenio__card">
+      <img src="/huila.jpg" alt="huila" loading="lazy">
+    </div>
+    <div class="convenio__card">
+      <img src="/cartagena.jpg" alt="cartagena" loading="lazy">
+    </div>
+  </div>
+  <div class="portfolio__banner">
+    <div class="portfolio__banner__card">
+      <span><i class="ri-earth-line"></i></span>
+      <h4>Cobertura a nivel Nacional</h4>
+      <p>Toda Colombia</p>
+    </div>
+    <div class="portfolio__banner__card">
+      <span><i class="ri-discuss-line"></i></span>
+      <h4>100% digital</h4>
+      <p>En pocos pasos</p>
+    </div>
+    <div class="portfolio__banner__card">
+      <span><i class="ri-calendar-check-line"></i></span>
+      <h4>Desde 12 hasta 144 meses</h4>
+      <p>Eliges tu plazo</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Portfolio section styles */
+  .section__img {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .portfolio__grid {
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .convenio__card {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .convenio__card img {
+    transition: 0.5s;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .convenio__card:hover img {
+    transform: scale(1.1);
+  }
+
+  .portfolio__banner {
+    margin-top: 3rem;
+    padding: 2.5rem 2rem;
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+    background-image: var(--gradient-2);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .portfolio__banner__card {
+    padding: 1rem;
+  }
+
+  .portfolio__banner__card span {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #00aa44;
+  }
+
+  .portfolio__banner__card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .portfolio__banner__card p {
+    font-weight: 500;
+    color: var(--extra-light);
+    font-size: 16px;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    .portfolio__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 1rem;
+      max-width: 100%;
+    }
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    .portfolio__grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+
+    .portfolio__banner {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 3rem 2rem;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .portfolio__grid {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+    .portfolio__banner__card span {
+      font-size: 2.5rem;
+    }
+
+    .portfolio__banner__card h4 {
+      font-size: 1.3rem;
+    }
+
+    .portfolio__banner__card p {
+      font-size: 17px;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .section__img {
+      font-size: 2.5rem;
+    }
+
+    .portfolio__grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .portfolio__banner {
+      padding: 4rem 3rem;
+    }
+
+    .portfolio__banner__card span {
+      font-size: 3rem;
+    }
+
+    .portfolio__banner__card h4 {
+      font-size: 1.4rem;
+    }
+
+    .portfolio__banner__card p {
+      font-size: 18px;
+    }
+  }
+</style>
