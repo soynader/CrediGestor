@@ -105,7 +105,7 @@ npm run preview
 
 **Nader Montenegro**  
 Asesor de Crédito Especializado  
-📱 WhatsApp: [304 648 0657](https://wa.me/573046480657)  
+📱 WhatsApp: [350 548 9828](https://wa.me/573505489828)  
 🌐 Web: [credigestor.com](https://credigestor.com)
 
 ---
