@@ -5,65 +5,128 @@
 <section class="section__container portfolio__container" id="convenios">
   <h2 class="section__img">Nuestros convenios</h2>
   <div class="portfolio__grid">
+    <!-- Primeras 6 imágenes con carga inmediata (above the fold) -->
     <div class="convenio__card">
-      <img src="/casur.jpg" alt="CASUR - Caja de Sueldos de Retiro de la Policía Nacional" loading="lazy" width="200" height="120">
+      <picture>
+        <source srcset="/casur.webp" type="image/webp">
+        <img src="/casur.jpg" alt="CASUR - Caja de Sueldos de Retiro de la Policía Nacional" width="200" height="120">
+      </picture>
     </div>
     <div class="convenio__card">
-      <img src="/cremil.jpg" alt="CREMIL - Caja de Retiro de las Fuerzas Militares" loading="lazy" width="200" height="120">
+      <picture>
+        <source srcset="/cremil.webp" type="image/webp">
+        <img src="/cremil.jpg" alt="CREMIL - Caja de Retiro de las Fuerzas Militares" width="200" height="120">
+      </picture>
     </div>
     <div class="convenio__card">
-      <img src="/colpensiones.jpg" alt="Colpensiones - Administradora Colombiana de Pensiones" loading="lazy" width="200" height="120">
+      <picture>
+        <source srcset="/colpensiones.webp" type="image/webp">
+        <img src="/colpensiones.jpg" alt="Colpensiones - Administradora Colombiana de Pensiones" width="200" height="120">
+      </picture>
     </div>
     <div class="convenio__card">
-      <img src="/fopep.jpg" alt="FOPEP - Fondo de Prestaciones Económicas Cesantías y Pensiones" loading="lazy" width="200" height="120">
+      <picture>
+        <source srcset="/fopep.webp" type="image/webp">
+        <img src="/fopep.jpg" alt="FOPEP - Fondo de Prestaciones Económicas Cesantías y Pensiones" width="200" height="120">
+      </picture>
     </div>
     <div class="convenio__card">
-      <img src="/fomag.jpg" alt="FOMAG - Fondo Nacional del Magisterio" loading="lazy" width="200" height="120">
+      <picture>
+        <source srcset="/fomag.webp" type="image/webp">
+        <img src="/fomag.jpg" alt="FOMAG - Fondo Nacional del Magisterio" width="200" height="120">
+      </picture>
     </div>
     <div class="convenio__card">
-      <img src="/armenia.jpg" alt="Gobernación de Armenia - Convenio Crédito de Libranza" loading="lazy" width="200" height="120">
+      <picture>
+        <source srcset="/armenia.webp" type="image/webp">
+        <img src="/armenia.jpg" alt="Gobernación de Armenia - Convenio Crédito de Libranza" width="200" height="120">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/tolima.jpg" alt="Gobernación del Tolima - Convenio Crédito de Libranza" loading="lazy" width="200" height="120">
+    
+    <!-- Resto de imágenes con lazy loading -->
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/tolima.webp" type="image/webp">
+        <img data-src="/tolima.jpg" alt="Gobernación del Tolima - Convenio Crédito de Libranza" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/proteccion.jpg" alt="Protección - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/proteccion.webp" type="image/webp">
+        <img data-src="/proteccion.jpg" alt="Protección - Administradora de Fondos de Pensiones" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/colfondos.jpg" alt="Colfondos - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/colfondos.webp" type="image/webp">
+        <img data-src="/colfondos.jpg" alt="Colfondos - Administradora de Fondos de Pensiones" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/positiva.jpg" alt="Positiva Compañía de Seguros - ARL" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/positiva.webp" type="image/webp">
+        <img data-src="/positiva.jpg" alt="Positiva Compañía de Seguros - ARL" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/porvenir.jpg" alt="Porvenir - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/porvenir.webp" type="image/webp">
+        <img data-src="/porvenir.jpg" alt="Porvenir - Administradora de Fondos de Pensiones" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/mafre.jpg" alt="MAPFRE - Compañía de Seguros" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/mafre.webp" type="image/webp">
+        <img data-src="/mafre.jpg" alt="MAPFRE - Compañía de Seguros" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/sura.jpg" alt="SURA - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/sura.webp" type="image/webp">
+        <img data-src="/sura.jpg" alt="SURA - Administradora de Fondos de Pensiones" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/alfa.jpg" alt="Old Mutual - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/alfa.webp" type="image/webp">
+        <img data-src="/alfa.jpg" alt="Old Mutual - Administradora de Fondos de Pensiones" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/skandia.jpg" alt="Skandia - Administradora de Fondos de Pensiones" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/skandia.webp" type="image/webp">
+        <img data-src="/skandia.jpg" alt="Skandia - Administradora de Fondos de Pensiones" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/asulado.jpg" alt="ASULADO - Asociación de Usuarios de la Defensoría del Pueblo" loading="lazy" width="200" height="120">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/asulado.webp" type="image/webp">
+        <img data-src="/asulado.jpg" alt="ASULADO - Asociación de Usuarios de la Defensoría del Pueblo" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/antioquia.jpg" alt="antioquia" loading="lazy">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/antioquia.webp" type="image/webp">
+        <img data-src="/antioquia.jpg" alt="antioquia" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/medellin.jpg" alt="medellin" loading="lazy">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/medellin.webp" type="image/webp">
+        <img data-src="/medellin.jpg" alt="medellin" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/huila.jpg" alt="huila" loading="lazy">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/huila.webp" type="image/webp">
+        <img data-src="/huila.jpg" alt="huila" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
-    <div class="convenio__card">
-      <img src="/cartagena.jpg" alt="cartagena" loading="lazy">
+    <div class="convenio__card lazy-load">
+      <picture>
+        <source data-srcset="/cartagena.webp" type="image/webp">
+        <img data-src="/cartagena.jpg" alt="cartagena" width="200" height="120" class="lazy-img">
+      </picture>
     </div>
   </div>
   <div class="portfolio__banner">
@@ -85,7 +148,49 @@
   </div>
 </section>
 
+<script>
+  // Lazy load para las imágenes con data-src / data-srcset
+  const lazyCards = document.querySelectorAll('.convenio__card.lazy-load');
+
+  const loadPicture = (picture: HTMLPictureElement) => {
+    const source = picture.querySelector('source');
+    const img = picture.querySelector('img');
+    if (source && source.dataset.srcset) {
+      source.srcset = source.dataset.srcset;
+    }
+    if (img && img.dataset.src) {
+      img.src = img.dataset.src;
+    }
+    img?.removeAttribute('data-src');
+    source?.removeAttribute('data-srcset');
+    if (img) img.loading = 'lazy';
+  };
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const picture = entry.target.querySelector('picture');
+          if (picture) loadPicture(picture);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '150px' });
+
+    lazyCards.forEach(card => io.observe(card));
+  } else {
+    // Fallback: cargar todas
+    lazyCards.forEach(card => {
+      const picture = card.querySelector('picture');
+      if (picture) loadPicture(picture);
+    });
+  }
+</script>
+
 <style>
+  /* Utilidad sutil para asegurar bordes redondeados sin afectar el diseño */
+  .convenio__card picture, .convenio__card img { border-radius: 0.5rem; }
+
   /* Portfolio section styles */
   .section__img {
     margin-bottom: 2rem;
@@ -168,10 +273,10 @@
   }
 
   /* Tablet styles */
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .portfolio__grid {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: auto;
       gap: 1.5rem;
     }
 
@@ -181,52 +286,33 @@
     }
   }
 
-  /* Desktop styles */
-  @media (min-width: 1024px) {
-    .portfolio__grid {
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-  }
-
-    .portfolio__banner__card span {
-      font-size: 2.5rem;
-    }
-
-    .portfolio__banner__card h4 {
-      font-size: 1.3rem;
-    }
-
-    .portfolio__banner__card p {
-      font-size: 17px;
-    }
-  }
-
-  /* Desktop styles */
+  /* Desktop styles - FIXED: 5 columnas fijas */
   @media (min-width: 1024px) {
     .section__img {
       font-size: 2.5rem;
     }
 
     .portfolio__grid {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto;
+      gap: 1.5rem;
     }
 
     .portfolio__banner {
       padding: 4rem 3rem;
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .portfolio__banner__card span {
-      font-size: 3rem;
+    .portfolio__banner__card span { 
+      font-size: 3rem; 
     }
-
-    .portfolio__banner__card h4 {
-      font-size: 1.4rem;
+    
+    .portfolio__banner__card h4 { 
+      font-size: 1.4rem; 
     }
-
-    .portfolio__banner__card p {
-      font-size: 18px;
+    
+    .portfolio__banner__card p { 
+      font-size: 18px; 
     }
   }
 </style>

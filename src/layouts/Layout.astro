@@ -80,6 +80,11 @@ const { title, description = "Crédito de libranza rápido y confiable para pens
         });
       });
     </script>
+    
+    <!-- Preload top-fold convenios to improve LCP -->
+    <link rel="preload" as="image" href="/casur.webp" imageSrcSet="/casur.webp" imageSizes="(max-width: 600px) 200px, 240px" type="image/webp">
+    <link rel="preload" as="image" href="/cremil.webp" imageSrcSet="/cremil.webp" imageSizes="(max-width: 600px) 200px, 240px" type="image/webp">
+    <link rel="preload" as="image" href="/colpensiones.webp" imageSrcSet="/colpensiones.webp" imageSizes="(max-width: 600px) 200px, 240px" type="image/webp">
   </head>
   <body>
     <slot />
