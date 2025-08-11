@@ -21,21 +21,40 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Cache images
+# Cache images with longer expiration
 [[headers]]
   for = "/*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*.png"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache fonts
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Preload important assets
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = '''</assets/style.DVmu7APJ.css>; rel=preload; as=style,
+              <https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap>; rel=preconnect,
+              <https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css>; rel=preconnect'''
 
 # Redirect rules
 [[redirects]]

@@ -4,9 +4,23 @@
 
 <section class="section__container about__container" id="reportados">
   <div class="about__image">
-    <img src="/bg.png" alt="Fondo decorativo" class="about__bg-1" loading="lazy" width="400" height="300" />
-    <img src="/bg.png" alt="Fondo decorativo" class="about__bg-2" loading="lazy" width="400" height="300" />
-    <img src="/about.jpg" alt="Asesor financiero Nader Montenegro especialista en créditos de libranza" class="about__img" loading="lazy" width="400" height="500" />
+    <img src="/bg.png" alt="" class="about__bg-1" loading="lazy" width="150" height="150" role="presentation" />
+    <img src="/bg.png" alt="" class="about__bg-2" loading="lazy" width="150" height="150" role="presentation" />
+    
+    <!-- Responsive square image with modern formats -->
+    <picture>
+      <source srcset="/about.webp 500w" sizes="(max-width: 480px) 300px, (max-width: 768px) 400px, 500px" type="image/webp">
+      <img 
+        src="/about.jpg" 
+        alt="Asesor financiero especialista en créditos de libranza para pensionados, maestros y policías" 
+        class="about__img" 
+        loading="lazy" 
+        width="500" 
+        height="500"
+        srcset="/about.jpg 500w"
+        sizes="(max-width: 480px) 300px, (max-width: 768px) 400px, 500px"
+      />
+    </picture>
   </div>
   <div class="about__content">
     <h2 class="section__header">Aplica para reportados</h2>
@@ -40,6 +54,10 @@
   .about__img {
     border-radius: 100%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* Mantener proporción cuadrada */
+    object-fit: cover;
   }
 
   .about__bg-1,
@@ -48,6 +66,8 @@
     max-width: 150px;
     z-index: -1;
     opacity: 0.7;
+    width: 150px;
+    height: 150px;
   }
 
   .about__bg-1 {

@@ -1,0 +1,185 @@
+---
+// Header component
+---
+
+<nav>
+  <div class="nav__bar">        
+    <a href="https://credigestor.com" class="logo-link">
+      <img src="/credigestor.svg" alt="CrediGestor" class="logo-img">
+      CrediGestor
+    </a>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-3-line"></i>
+    </div>
+  </div>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#reportados">Reportados</a></li>
+    <li><a href="#beneficios">Beneficios</a></li>
+    <li><a href="#preguntas">Preguntas</a></li>
+    <li><a href="#convenios">Convenios</a></li>
+    <li><a href="#requisitos">Requisitos</a></li>
+    <li><a href="#contact" class="btn"> Whatsapp☺<span><i class="ri-whatsapp-line"></i></span></a></li>
+  </ul>
+  <a href="https://wa.me/573505489828" target="_blank" rel="noopener noreferrer" class="btn btn__large">
+    Whatsapp☺ <span><i class="ri-whatsapp-line"></i></span>
+  </a>
+</nav>
+
+<style>
+  /* Navigation styles */
+  nav {
+    position: fixed;
+    isolation: isolate;
+    top: 0;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    z-index: 9;
+  }
+
+  .nav__bar {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-image: var(--gradient-1);
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .logo-img {
+    width: 25px;
+    height: auto;
+    margin-right: 8px;
+  }
+
+  .nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .nav__links {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-image: var(--gradient-2);
+    transform: translateY(-100%);
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  .nav__links.open {
+    transform: translateY(0);
+  }
+
+  .nav__links a {
+    color: var(--white);
+    transition: 0.3s;
+    text-decoration: none;
+  }
+
+  .nav__links a:hover {
+    color: var(--white);
+  }
+
+  .btn__large {
+    display: none;
+  }
+
+  /* Media queries for responsive logo */
+  @media (max-width: 576px) {
+    .logo-img {
+      width: 25px;
+      margin-right: 6px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      width: 25px;
+      margin-right: 4px;
+    }
+  }
+
+  /* Desktop styles */
+  @media (width > 768px) {
+    nav {
+      padding: 2rem 1rem;
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .nav__bar {
+      padding: 0;
+      background-image: none;
+      display: contents;
+    }
+
+    .nav__menu__btn {
+      display: none;
+    }
+
+    .nav__links {
+      padding: 0;
+      width: unset;
+      position: static;
+      transform: none;
+      flex-direction: row;
+      background-image: none;
+    }
+
+    .nav__links a:hover {
+      color: #ff7300;
+    }
+
+    .nav__links li:last-child {
+      display: none;
+    }
+
+    .btn__large {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu functionality
+  const navLinks = document.getElementById("nav-links");
+  const menuBtn = document.getElementById("menu-btn");
+  const menuBtnIcon = menuBtn?.querySelector("i");
+
+  menuBtn?.addEventListener("click", (e) => {
+    navLinks?.classList.toggle("open");
+
+    const isOpen = navLinks?.classList.contains("open");
+    menuBtnIcon?.setAttribute(
+      "class",
+      isOpen ? "ri-close-line" : "ri-menu-3-line"
+    );
+  });
+
+  navLinks?.addEventListener("click", (e) => {
+    navLinks.classList.remove("open");
+    menuBtnIcon?.setAttribute("class", "ri-menu-3-line");
+  });
+</script>

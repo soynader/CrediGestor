@@ -33,14 +33,22 @@ const { title, description = "Crédito de libranza rápido y confiable para pens
     <meta property="twitter:description" content={description}>
     <meta property="twitter:image" content="https://credigestor.com/header.jpg">
     
-    <!-- Preconnect for performance -->
+    <!-- Preconnect for performance optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fast.wistia.com">
+    <link rel="preconnect" href="https://fast.wistia.net">
+    <link rel="preconnect" href="https://embed-ssl.wistia.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     
-    <!-- Fonts with display=swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <!-- Critical CSS inline for Montserrat font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"></noscript>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://credigestor.com">
@@ -52,13 +60,25 @@ const { title, description = "Crédito de libranza rápido y confiable para pens
     <!-- Theme color -->
     <meta name="theme-color" content="#0b1728">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-752741883"></script>
+    <!-- Google Analytics - defer for better performance -->
     <script>
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      function gtag(){(window as any).dataLayer.push(arguments);}
-      (window as any).gtag('js', new Date());
-      (window as any).gtag('config', 'AW-752741883');
+      // Defer Google Analytics loading
+      window.addEventListener('load', function() {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-752741883';
+        document.head.appendChild(script);
+        
+        script.addEventListener('load', function() {
+          // Declarar propiedades en window de forma type-safe
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).gtag = function(){ 
+            (window as any).dataLayer.push(arguments); 
+          };
+          (window as any).gtag('js', new Date());
+          (window as any).gtag('config', 'AW-752741883');
+        });
+      });
     </script>
   </head>
   <body>

@@ -4,18 +4,72 @@
 
 <header class="section__container header__container" id="inicio">
   <div class="video-container">
-    <link rel="preconnect" href="https://fast.wistia.com">
-    <script src="https://fast.wistia.com/player.js" async></script>
-    <script src="https://fast.wistia.com/embed/50onh39pm2.js" async type="module"></script>
-    <style>
-      wistia-player[media-id='50onh39pm2']:not(:defined) { 
-        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/50onh39pm2/swatch'); 
-        display: block; 
-        filter: blur(5px); 
-        padding-top:56.25%; 
+    <script>
+      // Lazy load Wistia scripts only when video container is in viewport
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const playerScript = document.createElement('script');
+              playerScript.src = 'https://fast.wistia.com/player.js';
+              playerScript.async = true;
+              document.head.appendChild(playerScript);
+
+              const embedScript = document.createElement('script');
+              embedScript.src = 'https://fast.wistia.com/embed/50onh39pm2.js';
+              embedScript.async = true;
+              embedScript.type = 'module';
+              document.head.appendChild(embedScript);
+
+              videoObserver.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '50px' });
+
+        const target = document.querySelector('.video-container');
+        if (target) {
+          videoObserver.observe(target);
+        }
+      } else {
+        const playerScript = document.createElement('script');
+        playerScript.src = 'https://fast.wistia.com/player.js';
+        playerScript.async = true;
+        document.head.appendChild(playerScript);
+
+        const embedScript = document.createElement('script');
+        embedScript.src = 'https://fast.wistia.com/embed/50onh39pm2.js';
+        embedScript.async = true;
+        embedScript.type = 'module';
+        document.head.appendChild(embedScript);
       }
-    </style> 
+    </script>
+
+    <style>
+      wistia-player[media-id='50onh39pm2']:not(:defined) {
+        background: center / cover no-repeat url('https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.webp?image_crop_resized=380x214');
+        display: block;
+        padding-top: 56.25%;
+        border-radius: 1rem;
+      }
+
+      wistia-player[media-id='50onh39pm2'] {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;
+      }
+
+      #video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 1rem; transition: opacity .3s ease; }
+      /* Hide placeholder when the custom element is defined */
+      wistia-player[media-id='50onh39pm2']:defined + #video-placeholder { opacity: 0; pointer-events: none; }
+    </style>
+
     <wistia-player media-id="50onh39pm2" aria-label="Video explicativo sobre crédito de libranza para pensionados"></wistia-player>
+    <img
+      id="video-placeholder"
+      src="https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.webp?image_crop_resized=380x214"
+      alt="Video explicativo sobre crédito de libranza para pensionados"
+      fetchpriority="high"
+      decoding="async"
+    />
   </div>
 
   <div class="header__content">
