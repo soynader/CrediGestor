@@ -4,21 +4,25 @@
 
 <section class="section__container about__container" id="reportados">
   <div class="about__image">
-    <img src="/bg.png" alt="" class="about__bg-1" loading="lazy" width="150" height="150" role="presentation" />
-    <img src="/bg.png" alt="" class="about__bg-2" loading="lazy" width="150" height="150" role="presentation" />
+    <!-- Reemplazando imágenes PNG con divs estilizados para reducir HTTP requests -->
+    <div class="about__bg-1" aria-hidden="true"></div>
+    <div class="about__bg-2" aria-hidden="true"></div>
     
-    <!-- Responsive square image with modern formats -->
+    <!-- Imagen optimizada con tamaños responsivos y carga prioritaria -->
     <picture>
-      <source srcset="/about.webp 500w" sizes="(max-width: 480px) 300px, (max-width: 768px) 400px, 500px" type="image/webp">
+      <source 
+        srcset="/about.webp 500w" 
+        sizes="(max-width: 480px) 300px, (max-width: 768px) 400px, 500px" 
+        type="image/webp">
       <img 
         src="/about.jpg" 
         alt="Asesor financiero especialista en créditos de libranza para pensionados, maestros y policías" 
         class="about__img" 
-        loading="lazy" 
         width="500" 
         height="500"
         srcset="/about.jpg 500w"
         sizes="(max-width: 480px) 300px, (max-width: 768px) 400px, 500px"
+        fetchpriority="high"
       />
     </picture>
   </div>
@@ -63,11 +67,12 @@
   .about__bg-1,
   .about__bg-2 {
     position: absolute;
-    max-width: 150px;
     z-index: -1;
     opacity: 0.7;
     width: 150px;
     height: 150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
   }
 
   .about__bg-1 {

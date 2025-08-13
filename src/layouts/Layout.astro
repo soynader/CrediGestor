@@ -33,21 +33,22 @@ const { title, description = "Crédito de libranza rápido y confiable para pens
     <meta property="twitter:description" content={description}>
     <meta property="twitter:image" content="https://credigestor.com/header.jpg">
     
-    <!-- Preconnect for performance optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- DNS Prefetch y Preconnect para recursos críticos -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://fast.wistia.com">
-    <link rel="preconnect" href="https://fast.wistia.net">
-    <link rel="preconnect" href="https://embed-ssl.wistia.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     
-    <!-- Critical CSS inline for Montserrat font -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Preload de fuentes críticas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
     
-    <!-- Defer non-critical CSS -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Preload de iconos con carga diferida -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"></noscript>
     
     <!-- Canonical URL -->
@@ -60,31 +61,36 @@ const { title, description = "Crédito de libranza rápido y confiable para pens
     <!-- Theme color -->
     <meta name="theme-color" content="#0b1728">
     
-    <!-- Google Analytics - defer for better performance -->
-    <script>
-      // Defer Google Analytics loading
-      window.addEventListener('load', function() {
+    <!-- Google Analytics - defer para mejor rendimiento -->
+    <script type="module">
+      // Cargar Google Analytics solo después de la interacción del usuario o 3 segundos
+      const loadGA = () => {
+        if (window.gaLoaded) return;
+        window.gaLoaded = true;
+        
         const script = document.createElement('script');
         script.async = true;
         script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-752741883';
         document.head.appendChild(script);
         
-        script.addEventListener('load', function() {
-          // Declarar propiedades en window de forma type-safe
-          (window as any).dataLayer = (window as any).dataLayer || [];
-          (window as any).gtag = function(){ 
-            (window as any).dataLayer.push(arguments); 
-          };
-          (window as any).gtag('js', new Date());
-          (window as any).gtag('config', 'AW-752741883');
-        });
-      });
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() { dataLayer.push(arguments); };
+        gtag('js', new Date());
+        gtag('config', 'AW-752741883');
+      };
+      
+      // Cargar después de interacción o timeout
+      ['click', 'scroll', 'touchstart'].forEach(evt => 
+        document.addEventListener(evt, loadGA, {once: true})
+      );
+      setTimeout(loadGA, 3000);
     </script>
     
-    <!-- Preload top-fold convenios to improve LCP -->
-    <link rel="preload" as="image" href="/casur.webp" imageSrcSet="/casur.webp" imageSizes="(max-width: 600px) 200px, 240px" type="image/webp">
-    <link rel="preload" as="image" href="/cremil.webp" imageSrcSet="/cremil.webp" imageSizes="(max-width: 600px) 200px, 240px" type="image/webp">
-    <link rel="preload" as="image" href="/colpensiones.webp" imageSrcSet="/colpensiones.webp" imageSizes="(max-width: 600px) 200px, 240px" type="image/webp">
+    <!-- Preload de imágenes críticas para mejorar LCP -->
+    <link rel="preload" as="image" href="/about.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/casur.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/cremil.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/colpensiones.webp" type="image/webp" fetchpriority="high">
   </head>
   <body>
     <slot />
@@ -92,9 +98,6 @@ const { title, description = "Crédito de libranza rápido y confiable para pens
 </html>
 
 <style is:global>
-  /* Import fonts */
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-
   /* Root variables */
   :root {
     --primary-color: #0b1728;

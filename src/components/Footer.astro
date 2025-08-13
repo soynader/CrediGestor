@@ -18,12 +18,12 @@
     
     <p class="footer__phone">
       <a href="tel:3505489828" class="call-link">
-        Llámame al <i class="ri-phone-line"></i> 573505489828
+        Llámame al <i class="ri-phone-line" aria-hidden="true"></i> 573505489828
       </a>
     </p>
     
-    <a href="https://wa.me/573505489828" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-      <i class="ri-whatsapp-line"></i>
+    <a href="https://wa.me/573505489828" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+      <i class="ri-whatsapp-line" aria-hidden="true"></i>
     </a>
     
     <p class="footer__copyright">
@@ -40,11 +40,13 @@
     color: var(--extra-light);
     text-align: center;
     position: relative;
+    contain: content;
   }
 
   .footer__content {
     max-width: var(--max-width);
     margin: 0 auto;
+    contain: content;
   }
 
   .footer__mission {
@@ -102,8 +104,10 @@
     font-size: 2rem;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     z-index: 1000;
+    will-change: transform;
+    contain: layout style;
   }
 
   .whatsapp-float:hover {
@@ -170,7 +174,7 @@
     }
   }
 
-  /* Animation for WhatsApp float button */
+  /* Animation for WhatsApp float button - optimized */
   @keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
