@@ -5,70 +5,31 @@
 <header class="section__container header__container" id="inicio">
   <div class="video-container">
     <script>
-      // Optimización de carga de Wistia con IntersectionObserver y carga diferida
-      document.addEventListener('DOMContentLoaded', function() {
-        // Función para cargar los scripts de Wistia
-        const loadWistiaScripts = () => {
-          // Verificar si los scripts ya están cargados
-          if (document.querySelector('script[src="https://fast.wistia.com/player.js"]')) {
-            return;
-          }
+      // Método estándar de carga de Wistia
+      (window as any)._wq = (window as any)._wq || [];
+      (window as any)._wq.push({
+        id: "50onh39pm2",
+        onReady: function(video: any) {
+          // El video está listo para reproducirse
+          console.log("Video listo");
           
-          // Cargar el script principal de Wistia
-          const playerScript = document.createElement('script');
-          playerScript.src = 'https://fast.wistia.com/player.js';
-          playerScript.async = true;
-          document.head.appendChild(playerScript);
-
-          // Cargar el script específico del video
-          playerScript.onload = () => {
-            const embedScript = document.createElement('script');
-            embedScript.src = 'https://fast.wistia.com/embed/50onh39pm2.js';
-            embedScript.async = true;
-            embedScript.type = 'module';
-            document.head.appendChild(embedScript);
-          };
-        };
-
-        // Usar IntersectionObserver para cargar los scripts cuando el contenedor esté cerca del viewport
-        if ('IntersectionObserver' in window) {
-          const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                // Cargar scripts cuando el contenedor está visible o cerca
-                loadWistiaScripts();
-                videoObserver.unobserve(entry.target);
-              }
-            });
-          }, { 
-            rootMargin: '200px 0px', // Precargar cuando esté a 200px de entrar en viewport
-            threshold: 0.01
-          });
-
-          const target = document.querySelector('.video-container');
-          if (target) {
-            videoObserver.observe(target);
+          // Ocultar el placeholder cuando el video esté listo
+          const placeholder = document.getElementById('video-placeholder');
+          if (placeholder) {
+            placeholder.style.opacity = '0';
+            placeholder.style.pointerEvents = 'none';
           }
-        } else {
-          // Fallback para navegadores sin soporte para IntersectionObserver
-          // Retrasar la carga para priorizar contenido crítico
-          setTimeout(loadWistiaScripts, 1000);
         }
       });
     </script>
+    
+    <!-- Scripts de Wistia -->
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 
     <style>
-      wistia-player[media-id='50onh39pm2']:not(:defined) {
-        background: center / cover no-repeat url('https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.webp?image_crop_resized=380x214');
-        display: block;
-        padding-top: 56.25%;
+      .wistia_embed {
         border-radius: 1rem;
-        content-visibility: auto;
-      }
-
-      wistia-player[media-id='50onh39pm2'] {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;
+        contain: layout size style;
       }
 
       #video-placeholder { 
@@ -80,21 +41,28 @@
         object-fit: cover; 
         border-radius: 1rem; 
         transition: opacity .3s ease;
+        contain: strict;
+        z-index: 1; /* Asegura que esté por encima del video hasta que se cargue */
       }
-      /* Hide placeholder when the custom element is defined */
-      wistia-player[media-id='50onh39pm2']:defined + #video-placeholder { opacity: 0; pointer-events: none; }
     </style>
 
-    <wistia-player media-id="50onh39pm2" aria-label="Video explicativo sobre crédito de libranza para pensionados"></wistia-player>
-    <img
-      id="video-placeholder"
-      src="https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.webp?image_crop_resized=380x214"
-      alt="Video explicativo sobre crédito de libranza para pensionados"
-      width="380" 
-      height="214"
-      fetchpriority="high"
-      decoding="async"
-    />
+    <div class="wistia_embed wistia_async_50onh39pm2" style="height:100%;width:100%;position:absolute;" aria-label="Video explicativo sobre crédito de libranza para pensionados">&nbsp;</div>
+    <picture>
+      <source
+        type="image/webp"
+        srcset="https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.webp?image_crop_resized=380x214"
+      />
+      <img
+        id="video-placeholder"
+        src="https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.jpg?image_crop_resized=380x214"
+        alt="Video explicativo sobre crédito de libranza para pensionados"
+        width="380" 
+        height="214"
+        fetchpriority="high"
+        decoding="async"
+        loading="eager"
+      />
+    </picture>
   </div>
 
   <div class="header__content">
@@ -160,7 +128,7 @@
     will-change: transform;
   }
 
-  .video-container wistia-player {
+  .video-container .wistia_embed {
     position: absolute;
     top: 0;
     left: 0;

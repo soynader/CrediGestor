@@ -9,19 +9,19 @@
     <div class="convenio__card">
       <picture>
         <source srcset="/casur.webp" type="image/webp">
-        <img src="/casur.jpg" alt="CASUR - Caja de Sueldos de Retiro de la Policía Nacional" width="182" height="121" fetchpriority="high">
+        <img src="/casur.jpg" alt="CASUR - Caja de Sueldos de Retiro de la Policía Nacional" width="182" height="121" fetchpriority="high" loading="eager">
       </picture>
     </div>
     <div class="convenio__card">
       <picture>
         <source srcset="/cremil.webp" type="image/webp">
-        <img src="/cremil.jpg" alt="CREMIL - Caja de Retiro de las Fuerzas Militares" width="182" height="121" fetchpriority="high">
+        <img src="/cremil.jpg" alt="CREMIL - Caja de Retiro de las Fuerzas Militares" width="182" height="121" fetchpriority="high" loading="eager">
       </picture>
     </div>
     <div class="convenio__card">
       <picture>
         <source srcset="/colpensiones.webp" type="image/webp">
-        <img src="/colpensiones.jpg" alt="Colpensiones - Administradora Colombiana de Pensiones" width="182" height="121" fetchpriority="high">
+        <img src="/colpensiones.jpg" alt="Colpensiones - Administradora Colombiana de Pensiones" width="182" height="121" fetchpriority="high" loading="eager">
       </picture>
     </div>
     <div class="convenio__card">
@@ -153,7 +153,7 @@
   const lazyLoadImages = () => {
     const lazyCards = document.querySelectorAll('.convenio__card.lazy-load');
     
-    const loadPicture = (picture) => {
+    const loadPicture = (picture: HTMLPictureElement) => {
       const source = picture.querySelector('source');
       const img = picture.querySelector('img');
       if (source && source.dataset.srcset) {
@@ -187,7 +187,7 @@
       const lazyLoadFallback = () => {
         const scrollTop = window.pageYOffset;
         lazyCards.forEach(card => {
-          if (card.offsetTop < (window.innerHeight + scrollTop + 300)) {
+          if ((card as HTMLElement).offsetTop < (window.innerHeight + scrollTop + 300)) {
             const picture = card.querySelector('picture');
             if (picture) loadPicture(picture);
           }
@@ -195,7 +195,7 @@
       };
       
       // Throttle para mejorar rendimiento
-      let lazyLoadThrottleTimeout;
+      let lazyLoadThrottleTimeout: ReturnType<typeof setTimeout> | undefined;
       const throttleLazyLoad = () => {
         if (lazyLoadThrottleTimeout) {
           clearTimeout(lazyLoadThrottleTimeout);
@@ -203,9 +203,9 @@
         lazyLoadThrottleTimeout = setTimeout(lazyLoadFallback, 20);
       };
       
-      window.addEventListener('scroll', throttleLazyLoad);
-      window.addEventListener('resize', throttleLazyLoad);
-      window.addEventListener('orientationchange', throttleLazyLoad);
+      (window as Window).addEventListener('scroll', throttleLazyLoad);
+      (window as Window).addEventListener('resize', throttleLazyLoad);
+      (window as Window).addEventListener('orientationchange', throttleLazyLoad);
       lazyLoadFallback();
     }
   };

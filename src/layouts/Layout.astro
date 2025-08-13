@@ -98,111 +98,37 @@ const { title, description = "Crédito de libranza rápido y confiable para pens
 </html>
 
 <style is:global>
-  /* Root variables */
+  /* Root variables - optimizado */
   :root {
     --primary-color: #0b1728;
     --secondary-color: #162d50;
     --extra-light: #f3f4f6;
-    --white: #ffffff;
+    --white: #fff;
     --gradient-1: linear-gradient(to bottom right, #62393c, #181e41);
-    --gradient-2: linear-gradient(
-      to bottom,
-      var(--primary-color),
-      var(--secondary-color)
-    );
+    --gradient-2: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
     --max-width: 1400px;
-    
-    /* Additional variables */
     --primary-color-dark: #1d4ce6;
     --primary-color-darkf: #34075c;
-    --secondary-colorf: #ffffff;
+    --secondary-colorf: #fff;
     --secondary-color-light: #81cf1a;
     --text-light: #94a3b8;
-    --gradient: linear-gradient(
-      to right,
-      var(--primary-color-dark),
-      var(--primary-color)
-    );
+    --gradient: linear-gradient(to right, var(--primary-color-dark), var(--primary-color));
   }
 
-  /* Reset and base styles */
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  /* Reset y estilos base - optimizado */
+  *{padding:0;margin:0;box-sizing:border-box}
+  html,body{scroll-behavior:smooth;content-visibility:auto}
+  body{font-family:"Montserrat",sans-serif;color:var(--white);background-image:var(--gradient-1);text-rendering:optimizeSpeed}
+  img{width:100%;display:flex}
+  a{text-decoration:none}
 
-  html, body {
-    scroll-behavior: smooth;
-  }
+  /* Clases comunes - optimizado */
+  .section__container{max-width:var(--max-width);margin:auto;padding:2rem 1rem;contain:content}
+  .section__header{margin-bottom:1rem;font-size:2rem;font-weight:700;text-align:center}
+  .section__description{max-width:600px;margin-inline:auto;color:var(--extra-light);text-align:center;line-height:1.75rem;font-size:18px;padding-top:20px}
+  .btn{padding:.75rem 1.5rem;font-size:1.2rem;font-weight:500;color:var(--white);background-color:#0a4!important;outline:none;border:none;border-radius:5rem;cursor:pointer;box-shadow:5px 5px 10px rgba(0,0,0,.2);text-decoration:none;display:inline-block;will-change:transform}
+  .btn:hover{transform:translateY(-2px);box-shadow:5px 7px 15px rgba(0,0,0,.3)}
 
-  body {
-    font-family: "Montserrat", sans-serif;
-    color: var(--white);
-    background-image: var(--gradient-1);
-  }
-
-  img {
-    width: 100%;
-    display: flex;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  /* Common classes */
-  .section__container {
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 2rem 1rem;
-  }
-
-  .section__header {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .section__description {
-    max-width: 600px;
-    margin-inline: auto;
-    color: var(--extra-light);
-    text-align: center;
-    line-height: 1.75rem;
-    font-size: 18px;
-    padding-top: 20px;
-  }
-
-  .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--white);
-    background-color: #00aa44 !important;
-    outline: none;
-    border: none;
-    border-radius: 5rem;
-    cursor: pointer;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Responsive design */
-  @media (min-width: 768px) {
-    .section__header {
-      font-size: 2.5rem;
-    }
-    
-    .section__description {
-      font-size: 20px;
-    }
-  }
+  /* Diseño responsivo - optimizado */
+  @media (min-width:768px){.section__header{font-size:2.5rem}.section__description{font-size:20px}}
 </style>

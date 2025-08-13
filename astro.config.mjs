@@ -14,6 +14,13 @@ export default defineConfig({
   vite: {
     build: {
       cssCodeSplit: false,
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      },
       rollupOptions: {
         output: {
           manualChunks: undefined,
@@ -24,7 +31,19 @@ export default defineConfig({
       }
     },
     css: {
-      transformer: 'postcss'
+      devSourcemap: true,
+      // Optimización de CSS simplificada
+      preprocessorOptions: {
+        scss: {
+          outputStyle: 'compressed'
+        }
+      }
+    },
+    // Optimizar caché para recursos estáticos
+    server: {
+      headers: {
+        'Cache-Control': 'public, max-age=31536000'
+      }
     }
   }
 });
