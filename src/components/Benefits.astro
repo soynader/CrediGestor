@@ -1,139 +1,109 @@
 ---
-// Benefits component
+// Benefits section component
 ---
 
-<section class="section__container service__container" id="beneficios">
-  <h2 class="section__header">Tus beneficios exclusivos</h2>
-  <div class="service__grid">
-    <div class="service__card">
-      <span><i class="ri-money-dollar-circle-line"></i></span>
-      <h4>Crédito de libre inversión</h4>
-      <p>
-        Destina tu dinero como quieras: paga tus deudas, invierte o úsalo en lo que más te importe.
-      </p>
+<section id="beneficios" class="py-20 bg-gradient-to-br from-gray-900/50 to-purple-900/30">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-white mb-4">
+        Tus beneficios exclusivos
+      </h2>
+
     </div>
-    <div class="service__card">
-      <span><i class="ri-smartphone-line"></i></span>
-      <h4>Tramite 100% Digital</h4>
-      <p>
-        Realiza todo el proceso de tu préstamo desde cualquier computadora o dispositivo móvil, sin necesidad de desplazarte.
-      </p>
+    
+    <!-- Benefits Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Benefit 1 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-green-400/50">
+        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Crédito de libre inversión
+        </h3>
+        <p class="text-gray-300 leading-relaxed">
+          Destina tu dinero como quieras: paga tus deudas, invierte o úsalo en lo que más te importe.
+        </p>
+      </div>
+      
+      <!-- Benefit 2 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-green-400/50">
+        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Trámite 100% Digital
+        </h3>
+        <p class="text-gray-300 leading-relaxed">
+          Realiza todo el proceso de tu préstamo desde cualquier computadora o dispositivo móvil, sin necesidad de desplazarte.
+        </p>
+      </div>
+      
+      <!-- Benefit 3 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-green-400/50">
+        <div class="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Aunque tengas reportes en centrales de riesgo
+        </h3>
+        <p class="text-gray-300 leading-relaxed">
+          ¿Estás reportado o no tienes historial crediticio? No importa. Creemos en segundas oportunidades y te ofrecemos préstamos sin necesidad de codeudores.
+        </p>
+      </div>
+      
+      <!-- Benefit 4 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-green-400/50">
+        <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Compra de cartera con tasa de interés preferencial
+        </h3>
+        <p class="text-gray-300 leading-relaxed">
+          La solución a tus deudas comienza aquí. Reorganiza tus finanzas con la mejor tasa del mercado.
+        </p>
+      </div>
+      
+      <!-- Benefit 5 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-green-400/50">
+        <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Sin importar tu edad
+        </h3>
+        <p class="text-gray-300 leading-relaxed">
+          Te apoyamos en cada etapa de tu vida. Accede a un préstamo, incluso hasta los 84 años, y sigue alcanzando tus metas.
+        </p>
+      </div>
+      
+      <!-- Benefit 6 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-green-400/50">
+        <div class="w-16 h-16 bg-indigo-500/20 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Recibe tu aprobación el mismo día
+        </h3>
+        <p class="text-gray-300 leading-relaxed">
+          Con nuestro proceso ágil y sencillo, recibirás tu aprobación el mismo día. No esperes más para dar el primer paso hacia tu crédito.
+        </p>
+      </div>
     </div>
-    <div class="service__card">
-      <span><i class="ri-fire-line"></i></span>
-      <h4>Aunque tengas reportes en centrales de riesgo</h4>
-      <p>
-        ¿Estás reportado o no tienes historial crediticio? No importa. Creemos en segundas oportunidades y te ofrecemos préstamos sin necesidad de codeudores.
-      </p>
-    </div>
-    <div class="service__card">
-      <span><i class="ri-currency-fill"></i></span>
-      <h4>Compra de cartera con tasa de interes preferencial</h4>
-      <p>
-        La solución a tus deudas comienza aquí. Reorganiza tus finanzas con la mejor tasa del mercado.
-      </p>
-    </div>
-    <div class="service__card">
-      <span><i class="ri-p2p-fill"></i></span>
-      <h4>Sin importar tu edad</h4>
-      <p>
-        Te apoyamos en cada etapa de tu vida. Accede a un préstamo, incluso hasta los 84 años, y sigue alcanzando tus metas.
-      </p>
-    </div>
-    <div class="service__card">
-      <span><i class="ri-timer-flash-line"></i></span>
-      <h4>Recibe tu aprobación el mismo día</h4>
-      <p>
-        Con nuestro proceso ágil y sencillo, recibirás tu aprobación el mismo día, No esperes más para dar el primer paso hacia tu crédito.
-      </p>
-    </div>
+
   </div>
 </section>
-
-<style>
-  /* Service section styles */
-  .service__grid {
-    margin-top: 2rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  .service__card {
-    padding: 2rem 1.5rem;
-    text-align: center;
-    background-image: var(--gradient-2);
-    border-radius: 1rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .service__card:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .service__card span {
-    display: inline-block;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-    color: #00aa44;
-  }
-
-  .service__card h4 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.3;
-  }
-
-  .service__card p {
-    color: var(--extra-light);
-    line-height: 1.6;
-    font-size: 16px;
-  }
-
-  /* Tablet styles */
-  @media (min-width: 768px) {
-    .service__grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    .service__card {
-      padding: 2.5rem 2rem;
-    }
-
-    .service__card h4 {
-      font-size: 1.3rem;
-    }
-
-    .service__card p {
-      font-size: 17px;
-    }
-  }
-
-  /* Desktop styles */
-  @media (min-width: 1024px) {
-    .service__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .service__card {
-      padding: 3rem 2rem;
-    }
-
-    .service__card span {
-      font-size: 3rem;
-    }
-
-    .service__card h4 {
-      font-size: 1.4rem;
-    }
-
-    .service__card p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
-  }
-</style>

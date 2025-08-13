@@ -1,113 +1,69 @@
-# CrediGestor - Sitio Web Oficial
+# CrediGestor Web
 
-🚀 **Sitio web optimizado para crédito de libranza dirigido a pensionados, maestros y policías en Colombia.**
+Plataforma web para asesoría en créditos de libranza construida con Astro y Tailwind CSS.
 
-## 🌟 Características
+## 🚀 Características
 
-- ⚡ **Alto rendimiento** - Construido con Astro para máxima velocidad
-- 🔍 **SEO optimizado** - Meta tags, Open Graph, Twitter Cards
-- 📱 **Responsive** - Diseño adaptable a todos los dispositivos
-- ♿ **Accesible** - Cumple estándares de accesibilidad web
-- 🖼️ **Imágenes optimizadas** - Lazy loading y dimensiones definidas
-- 🎯 **Conversión optimizada** - Llamadas a la acción estratégicas
+- **100% Estático**: Generado con Astro para máximo rendimiento
+- **Responsive**: Diseño adaptable para todos los dispositivos
+- **Optimizado**: Imágenes en formatos modernos (AVIF, WebP)
+- **SEO Friendly**: Meta tags optimizados y estructura semántica
+- **Accesible**: Cumple con estándares de accesibilidad web
 
 ## 🛠️ Tecnologías
 
 - [Astro](https://astro.build/) - Framework web moderno
-- HTML5 semántico
-- CSS3 con variables personalizadas
-- JavaScript vanilla
-- Remix Icons
-- Google Fonts (Montserrat)
+- [Tailwind CSS](https://tailwindcss.com/) - Framework de CSS utilitario
+- [TypeScript](https://www.typescriptlang.org/) - Tipado estático
+
+## 📁 Estructura del Proyecto
+
+```text
+/
+├── public/              # Archivos estáticos (imágenes, favicon, etc.)
+├── src/
+│   ├── components/      # Componentes Astro reutilizables
+│   ├── layouts/         # Layouts de página
+│   └── pages/           # Páginas del sitio
+├── astro.config.mjs     # Configuración de Astro
+├── netlify.toml         # Configuración de Netlify
+└── package.json         # Dependencias y scripts
+```
+
+## 🧞 Comandos
+
+Todos los comandos se ejecutan desde la raíz del proyecto:
+
+| Comando                | Acción                                          |
+| :--------------------- | :---------------------------------------------- |
+| `npm install`          | Instala las dependencias                       |
+| `npm run dev`          | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run build`        | Construye el sitio para producción en `./dist/` |
+| `npm run build:prod`   | Limpia y construye para producción             |
+| `npm run preview`      | Previsualiza la construcción localmente        |
+| `npm run clean`        | Limpia archivos de construcción                |
 
 ## 🚀 Despliegue en Netlify
 
-### Configuración automática:
+Este proyecto está optimizado para Netlify con:
 
-1. **Conecta tu repositorio de GitHub a Netlify**
-2. **Configuración de build:**
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-   - Node version: `18`
+- Configuración automática en `netlify.toml`
+- Headers de seguridad y cache optimizados
+- Compresión HTML habilitada
+- Assets optimizados para CDN
 
-3. **Variables de entorno** (si las necesitas):
-   ```
-   NODE_VERSION=18
-   ```
+### Pasos para desplegar:
 
-### Configuración manual:
-
-El archivo `netlify.toml` ya está configurado con:
-- Headers de seguridad
-- Cache optimizado para assets
-- Redirects automáticos
-- Configuración de Node.js
-
-## 📦 Instalación y desarrollo local
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/username/credigestor-website.git
-
-# Instalar dependencias
-npm install
-
-# Ejecutar en modo desarrollo
-npm run dev
-
-# Construir para producción
-npm run build
-
-# Vista previa de la build
-npm run preview
-```
-
-## 📁 Estructura del proyecto
-
-```
-/
-├── public/              # Assets estáticos
-│   ├── *.jpg           # Imágenes de convenios
-│   ├── favicon.svg     # Favicon
-│   └── robots.txt      # SEO robots
-├── src/
-│   ├── components/     # Componentes Astro
-│   ├── layouts/        # Layouts base
-│   └── pages/          # Páginas del sitio
-├── netlify.toml        # Configuración Netlify
-└── package.json        # Dependencias del proyecto
-```
-
-## 🎯 Optimizaciones implementadas
-
-### SEO
-- Meta tags completos
-- Open Graph para redes sociales
-- Twitter Cards
-- Structured data
-- Sitemap automático
-- Robots.txt
-
-### Rendimiento
-- Lazy loading en imágenes
-- Preconnect a recursos externos
-- CSS y JS minificados
-- Imágenes con dimensiones definidas
-- Cache headers optimizados
-
-### Accesibilidad
-- Alt text descriptivo en imágenes
-- Estructura semántica HTML5
-- Contraste de colores adecuado
-- Navegación por teclado
+1. Conecta tu repositorio a Netlify
+2. La configuración se aplicará automáticamente desde `netlify.toml`
+3. El sitio se construirá con `npm run build`
 
 ## 📞 Contacto
 
-**Nader Montenegro**  
-Asesor de Crédito Especializado  
-📱 WhatsApp: [350 548 9828](https://wa.me/573505489828)  
-🌐 Web: [credigestor.com](https://credigestor.com)
+Para consultas sobre créditos de libranza:
+- **WhatsApp**: +57 350 548 9828
+- **Web**: [CrediGestor.com](https://credigestor.com)
 
 ---
 
-*Desarrollado con ❤️ para ayudar a pensionados, maestros y policías a acceder a créditos de libranza de forma rápida y confiable.*
+**Nota**: CrediGestor.com es un sitio web de asesoría, no somos una entidad financiera.

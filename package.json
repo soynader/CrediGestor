@@ -1,38 +1,21 @@
 {
-  "name": "credigestor-website",
+  "name": "credigestor-web",
   "type": "module",
-  "version": "1.0.0",
-  "description": "Sitio web oficial de CrediGestor - Crédito de libranza para pensionados, maestros y policías",
-  "author": "Nader Montenegro",
-  "license": "MIT",
-  "homepage": "https://credigestor.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/username/credigestor-website.git"
-  },
-  "keywords": [
-    "crédito de libranza",
-    "pensionados",
-    "maestros",
-    "policías",
-    "asesoría financiera",
-    "colombia"
-  ],
+  "version": "0.0.1",
+  "description": "CrediGestor - Plataforma de créditos de libranza",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "start": "astro dev"
+    "clean": "rm -rf dist .astro",
+    "build:prod": "npm run clean && astro build"
   },
   "dependencies": {
-    "astro": "^5.12.8"
-  },
-  "devDependencies": {
-    "cssnano": "^6.1.2",
-    "cssnano-preset-advanced": "^7.0.8",
-    "sharp": "^0.34.3",
-    "terser": "^5.19.2"
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.12.9",
+    "tailwindcss": "^4.1.11"
   },
   "engines": {
     "node": ">=18.0.0"

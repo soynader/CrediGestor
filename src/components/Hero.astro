@@ -1,180 +1,139 @@
 ---
-// Hero component
+// Hero section component
 ---
 
-<header class="section__container header__container" id="inicio">
-  <div class="video-container">
-    <script>
-      // Método estándar de carga de Wistia
-      (window as any)._wq = (window as any)._wq || [];
-      (window as any)._wq.push({
-        id: "50onh39pm2",
-        onReady: function(video: any) {
-          // El video está listo para reproducirse
-          console.log("Video listo");
+<section class="relative flex items-center justify-center overflow-hidden pt-4 sm:pt-12 pb-4 sm:pb-8">
+  
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-4">
+    <div class="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center">
+      <!-- Left Column - Text Content -->
+      <div class="space-y-4 sm:space-y-6">
+        <div class="space-y-2 sm:space-y-3">
+          <h1 class="text-3xl lg:text-5xl font-bold leading-tight">
+            <span class="block">Rápido, sencillo y</span>
+            <span class="block text-emerald-400">confiable:</span>
+            <span class="block text-xl lg:text-2xl font-normal text-blue-100 mt-1 sm:mt-2">
+              Crédito de libranza diseñado para pensionados, maestros y policías.
+            </span>
+          </h1>
+        </div>
+        
+        <!-- Key Benefits -->
+        <div class="space-y-1 sm:space-y-2">
+          <div class="flex items-center space-x-2">
+            <div class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+            <span class="text-base">Aprobación en 4 horas</span>
+          </div>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a 
+            href="https://wa.me/573505489828?text=Hola,%20quiero%20solicitar%20un%20crédito%20de%20libranza" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+          >
+            <span>Solicitar crédito</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
           
-          // Ocultar el placeholder cuando el video esté listo
-          const placeholder = document.getElementById('video-placeholder');
-          if (placeholder) {
-            placeholder.style.opacity = '0';
-            placeholder.style.pointerEvents = 'none';
-          }
+          <a 
+            href="https://wa.me/573505489828?text=Hola,%20necesito%20asesoría%20gratuita%20sobre%20créditos%20de%20libranza" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="border-2 border-white hover:bg-white hover:text-blue-900 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 flex items-center justify-center space-x-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+            <span>Asesoría Gratis</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Right Column - Video -->
+      <div class="relative">
+        <div class="aspect-video rounded-lg overflow-hidden relative">
+          <video 
+              id="heroVideo"
+              class="w-full h-full object-cover rounded-lg"
+              preload="metadata"
+              poster=""
+            >
+             <source src="https://media.tecnochat.com/video/1755102041236-creditoporlibranza.mp4" type="video/mp4">
+            <p class="text-white p-4">
+              Tu navegador no soporta el elemento de video. 
+              <a href="https://wa.me/573505489828?text=Hola,%20quiero%20ver%20el%20video%20informativo%20sobre%20créditos%20de%20libranza" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-green-400 hover:text-green-300 underline">
+                Contáctanos por WhatsApp para ver el video
+              </a>
+            </p>
+          </video>
+          
+          <!-- Custom Play Button -->
+          <div id="playButton" class="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition-opacity duration-300">
+            <div class="bg-white/90 hover:bg-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110">
+              <svg class="w-12 h-12 text-purple-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Decorative Elements -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-400/10 rounded-full -translate-y-32 translate-x-32"></div>
+  <div class="absolute bottom-0 left-0 w-48 h-48 bg-purple-400/10 rounded-full translate-y-24 -translate-x-24"></div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('heroVideo');
+    const playButton = document.getElementById('playButton');
+    
+    // Configurar para mostrar el frame del segundo 25
+    video.addEventListener('loadeddata', function() {
+      video.currentTime = 25;
+      video.pause();
+    });
+    
+    if (video && playButton) {
+      // Click en el botón de play
+      playButton.addEventListener('click', function() {
+        video.currentTime = 0; // Comenzar desde el inicio
+        video.controls = true;
+        video.play();
+        playButton.style.opacity = '0';
+        setTimeout(() => {
+          playButton.style.display = 'none';
+        }, 300);
+      });
+      
+      // Cuando el video se pausa, mostrar el botón de play
+      video.addEventListener('pause', function() {
+        if (!video.ended) {
+          playButton.style.display = 'flex';
+          setTimeout(() => {
+            playButton.style.opacity = '1';
+          }, 10);
         }
       });
-    </script>
-    
-    <!-- Scripts de Wistia -->
-    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-
-    <style>
-      .wistia_embed {
-        border-radius: 1rem;
-        contain: layout size style;
-      }
-
-      #video-placeholder { 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        object-fit: cover; 
-        border-radius: 1rem; 
-        transition: opacity .3s ease;
-        contain: strict;
-        z-index: 1; /* Asegura que esté por encima del video hasta que se cargue */
-      }
-    </style>
-
-    <div class="wistia_embed wistia_async_50onh39pm2" style="height:100%;width:100%;position:absolute;" aria-label="Video explicativo sobre crédito de libranza para pensionados">&nbsp;</div>
-    <picture>
-      <source
-        type="image/webp"
-        srcset="https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.webp?image_crop_resized=380x214"
-      />
-      <img
-        id="video-placeholder"
-        src="https://embed-ssl.wistia.com/deliveries/8b187fef037714db268216b4ad827473.jpg?image_crop_resized=380x214"
-        alt="Video explicativo sobre crédito de libranza para pensionados"
-        width="380" 
-        height="214"
-        fetchpriority="high"
-        decoding="async"
-        loading="eager"
-      />
-    </picture>
-  </div>
-
-  <div class="header__content">
-    <div>
-      <h1>Rápido, sencillo y confiable: Crédito de libranza diseñado para pensionados, maestros y policías.</h1>
-    </div>
-    <p class="horas">
-      Aprobación en 4 horas
-    </p>
-    <div class="header__btn">
-      <a href="https://wa.me/573505489828" target="_blank" rel="noopener noreferrer" class="btn">
-        <span><i class="ri-whatsapp-line"></i></span> Asesoría Gratis
-      </a>
-    </div>
-  </div>
-</header>
-
-<style>
-  /* Header styles */
-  .header__container {
-    padding-top: 5rem;
-    display: grid;
-    gap: 2rem;
-    isolation: isolate;
-    contain: layout style;
-  }
-
-  .header__content {
-    text-align: center;
-    contain: content;
-  }
-
-  .header__content h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    text-align: center;
-    line-height: 1.2;
-  }
-
-  .horas {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #00aa44;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .header__btn {
-    margin-top: 2rem;
-  }
-
-  /* Video container styles */
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    isolation: isolate;
-    z-index: -1;
-    border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    contain: layout size style;
-    will-change: transform;
-  }
-
-  .video-container .wistia_embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-  }
-
-  /* Desktop styles */
-  @media (min-width: 768px) {
-    .header__container {
-      padding-top: 5rem;
-      grid-template-columns: repeat(4, 1fr);
-      align-items: center;
-      gap: 2rem;
+      
+      // Cuando el video termina, mostrar el botón de play
+      video.addEventListener('ended', function() {
+        video.controls = false;
+        playButton.style.display = 'flex';
+        setTimeout(() => {
+          playButton.style.opacity = '1';
+        }, 10);
+      });
     }
-
-    .video-container {
-      grid-area: 1/3/2/5;
-      max-width: none;
-      margin: 0;
-    }
-
-    .header__content {
-      grid-area: 1/1/2/3;
-      text-align: left;
-    }
-
-    .header__content h1 {
-      font-size: 3rem;
-      line-height: 3rem;
-      text-align: left;
-    }
-
-    .horas {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .header__content h1 {
-      font-size: 3rem;
-    }
-
-    .horas {
-      font-size: 1.4rem;
-    }
-  }
-</style>
+  });
+</script>
