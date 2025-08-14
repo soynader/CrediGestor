@@ -23,6 +23,11 @@ const { title, description = 'CrediGestor - Créditos de libranza para pensionad
     <meta name="theme-color" content="#d3bc5f" />
     <meta name="generator" content={Astro.generator} />
     
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://media.tecnochat.com" />
+    
     <!-- SEO Meta Tags -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -36,6 +41,7 @@ const { title, description = 'CrediGestor - Créditos de libranza para pensionad
     <!-- Preload critical resources -->
     <link rel="preload" href="/credigestor.svg" as="image" type="image/svg+xml" />
     <link rel="preload" href="/header.avif" as="image" type="image/avif" />
+    <link rel="preload" href="../styles/global.css" as="style" />
     
     <title>{title}</title>
     
@@ -57,6 +63,43 @@ const { title, description = 'CrediGestor - Créditos de libranza para pensionad
   </head>
   <body class="font-sans antialiased">
     <slot />
+    
+    <!-- Performance optimization script -->
+    <script>
+      // Initialize performance optimizations
+      document.addEventListener('DOMContentLoaded', function() {
+        // Optimize animations for low-end devices
+        const isLowEndDevice = navigator.hardwareConcurrency <= 2 || 
+                              (navigator.deviceMemory && navigator.deviceMemory <= 2);
+        
+        if (isLowEndDevice) {
+          document.documentElement.style.setProperty('--animation-duration', '0.2s');
+          document.documentElement.style.setProperty('--transition-duration', '0.15s');
+        }
+        
+        // Add touch-friendly classes for mobile devices
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                        window.innerWidth <= 768;
+        
+        if (isMobile) {
+          document.body.classList.add('mobile-device');
+        }
+        
+        // Optimize scroll performance
+        let ticking = false;
+        function updateScrollPosition() {
+          // Throttle scroll events for better performance
+          ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            requestAnimationFrame(updateScrollPosition);
+            ticking = true;
+          }
+        }, { passive: true });
+      });
+    </script>
     
     <!-- WhatsApp Float Button -->
     <a 

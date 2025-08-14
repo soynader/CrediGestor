@@ -58,8 +58,10 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
           <video 
               id="heroVideo"
               class="w-full h-full object-cover rounded-lg"
-              preload="metadata"
+              preload="none"
               poster=""
+              playsinline
+              muted
             >
              <source src="https://media.tecnochat.com/video/1755102041236-creditoporlibranza.mp4" type="video/mp4">
             <p class="text-white p-4">
@@ -74,7 +76,7 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
           </video>
           
           <!-- Custom Play Button -->
-          <div id="playButton" class="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition-opacity duration-300">
+          <div id="playButton" class="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition-opacity duration-300" role="button" aria-label="Reproducir video informativo sobre créditos de libranza" tabindex="0">
             <div class="bg-white/90 hover:bg-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110">
               <svg class="w-12 h-12 text-purple-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
@@ -92,6 +94,9 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
 </section>
 
 <script>
+  // Import performance utilities
+  import { isMobileDevice, debounce } from '../utils/performance.js';
+  
   document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('heroVideo');
     const playButton = document.getElementById('playButton');
@@ -99,6 +104,13 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
     if (!video || !playButton) {
       console.warn('Video o botón de play no encontrado');
       return;
+    }
+    
+    // Optimize video loading for mobile devices
+    const isMobile = isMobileDevice();
+    if (isMobile) {
+      video.preload = 'none';
+      video.poster = '/header.avif'; // Add poster for better UX
     }
     
     // Configurar para mostrar el frame del segundo 25

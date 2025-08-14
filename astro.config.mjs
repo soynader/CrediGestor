@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://credigestor.com',
   output: 'static',
   build: {
     inlineStylesheets: 'auto',
@@ -11,6 +12,8 @@ export default defineConfig({
   },
   compressHTML: true,
   integrations: [tailwind()],
+  // SEO optimizations
+  trailingSlash: 'ignore',
   vite: {
     build: {
       cssCodeSplit: false,
