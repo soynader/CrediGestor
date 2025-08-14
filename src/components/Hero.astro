@@ -59,7 +59,7 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
               id="heroVideo"
               class="w-full h-full object-cover rounded-lg"
               preload="none"
-              poster=""
+              poster="/header.avif"
               playsinline
               muted
             >
@@ -110,18 +110,7 @@ import WhatsAppIcon from './WhatsAppIcon.astro';
     const isMobile = isMobileDevice();
     if (isMobile) {
       video.preload = 'none';
-      video.poster = '/header.avif'; // Add poster for better UX
     }
-    
-    // Configurar para mostrar el frame del segundo 25
-    video.addEventListener('loadeddata', function() {
-      try {
-        video.currentTime = 26;
-        video.pause();
-      } catch (error) {
-        console.error('Error al configurar el tiempo del video:', error);
-      }
-    });
     
     // Click en el botón de play
     playButton.addEventListener('click', function() {
